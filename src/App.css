@@ -1,0 +1,109 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", "Segoe UI", system-ui, sans-serif;
+  color: #0f172a;
+  background: radial-gradient(1200px 600px at 10% 10%, #fef3c7 0%, transparent 60%),
+    radial-gradient(900px 500px at 90% 20%, #c7d2fe 0%, transparent 55%),
+    linear-gradient(135deg, #f1f5f9 0%, #ffffff 60%);
+  min-height: 100vh;
+}
+
+.home {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 32px 20px;
+}
+
+.home-card {
+  width: 100%;
+  max-width: 640px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 24px;
+  padding: 40px 32px;
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.12);
+  backdrop-filter: blur(8px);
+  text-align: center;
+}
+
+.home-badge {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #1e40af;
+  background: #dbeafe;
+  margin-bottom: 16px;
+}
+
+.home-card h1 {
+  margin: 0 0 12px;
+  font-size: 36px;
+  line-height: 1.15;
+  color: #0f172a;
+}
+
+.home-subtitle {
+  margin: 0 0 28px;
+  font-size: 16px;
+  color: #475569;
+}
+
+.home-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  border: none;
+  padding: 12px 22px;
+  border-radius: 14px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.btn.primary {
+  color: #ffffff;
+  background: linear-gradient(135deg, #2563eb 0%, #0ea5e9 100%);
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.35);
+}
+
+.btn.ghost {
+  color: #1e293b;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn.primary:hover {
+  box-shadow: 0 14px 28px rgba(37, 99, 235, 0.4);
+}
+
+.btn.ghost:hover {
+  background: #e2e8f0;
+}
+
+@media (max-width: 480px) {
+  .home-card {
+    padding: 28px 20px;
+    border-radius: 20px;
+  }
+
+  .home-card h1 {
+    font-size: 28px;
+  }
+}
