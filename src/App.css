@@ -582,3 +582,207 @@ body {
     font-size: 2rem;
   }
 }
+
+/* ====== Dashboard ====== */
+.dash-shell {
+  min-height: 100vh;
+  padding: 36px 28px 56px;
+  background: radial-gradient(circle at top right, #1f3f59 0%, #122233 50%, #0b1520 100%);
+  color: var(--cream);
+}
+
+.dash-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.dash-kicker {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: 8px;
+}
+
+.dash-header h1 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  line-height: 1.15;
+}
+
+.dash-subtitle {
+  color: var(--text-muted);
+  margin-top: 8px;
+}
+
+.dash-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn-inline {
+  width: auto;
+  padding: 10px 14px;
+  margin: 0;
+}
+
+.dash-alert {
+  padding: 10px 12px;
+  border-radius: 10px;
+  margin-bottom: 14px;
+}
+
+.dash-alert.success {
+  color: #b5f3c7;
+  background: rgba(60, 200, 120, 0.12);
+  border: 1px solid rgba(60, 200, 120, 0.3);
+}
+
+.dash-alert.error {
+  color: #ffb4b4;
+  background: rgba(255, 90, 90, 0.12);
+  border: 1px solid rgba(255, 90, 90, 0.3);
+}
+
+.form-panel {
+  border: 1px solid rgba(201, 168, 76, 0.25);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.form-panel h2 {
+  font-family: "Playfair Display", serif;
+  margin-bottom: 12px;
+}
+
+.product-form {
+  display: grid;
+  gap: 10px;
+}
+
+.product-form input,
+.product-form textarea {
+  width: 100%;
+  padding: 12px 13px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(10, 21, 32, 0.4);
+  color: var(--cream);
+  font-family: "DM Sans", sans-serif;
+}
+
+.product-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.product-form input:focus,
+.product-form textarea:focus {
+  outline: none;
+  border-color: rgba(201, 168, 76, 0.6);
+  box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.12);
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.product-card {
+  border: 1px solid rgba(201, 168, 76, 0.22);
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.25);
+}
+
+.product-image-wrap {
+  width: 100%;
+  aspect-ratio: 16/11;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-body {
+  padding: 14px;
+}
+
+.product-body h3 {
+  font-family: "Playfair Display", serif;
+  margin-bottom: 8px;
+}
+
+.product-desc {
+  color: var(--text-muted);
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.card-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.btn-danger {
+  border: 1px solid rgba(255, 90, 90, 0.55);
+  background: rgba(255, 90, 90, 0.18);
+  color: #ffd6d6;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-danger:hover {
+  background: rgba(255, 90, 90, 0.28);
+}
+
+.edit-panel {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 14px;
+}
+
+.edit-panel h4 {
+  margin-bottom: 10px;
+  color: var(--gold-light);
+}
+
+.empty-state {
+  border: 1px dashed rgba(201, 168, 76, 0.35);
+  border-radius: 14px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.empty-state h2 {
+  font-family: "Playfair Display", serif;
+  margin-bottom: 6px;
+}
+
+.empty-state p,
+.muted-text {
+  color: var(--text-muted);
+}
+
+@media (max-width: 640px) {
+  .dash-shell {
+    padding: 26px 16px 40px;
+  }
+
+  .card-actions {
+    flex-wrap: wrap;
+  }
+}

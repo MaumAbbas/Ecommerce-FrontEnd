@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import {
+  extractUserFromLoginResponse,
+  setStoredUser,
+} from "../utils/auth";
 
 const API_BASE = import.meta.env.VITE_API_URL || "http://localhost:5000";
 
@@ -31,7 +35,22 @@ const Login = () => {
       });
 
       setSuccess(res?.data?.message || "Login successful");
-      navigate("/");
+
+      // Extract role from response and store for frontend access control.
+      const user = extractUserFromLoginResponse(res?.data);
+      if (user?.role) {
+        setStoredUser(user);
+      }
+
+      if (user?.role === "seller") {
+        navigate("/seller/dashboard");
+      } else if (user?.role === "admin") {
+        navigate("/admin/dashboard");
+      } else if (user?.role === "customer") {
+        navigate("/customer/dashboard");
+      } else {
+        navigate("/dashboard");
+      }
     } catch (err) {
       setError(err?.response?.data?.message || "Login failed");
     } finally {
@@ -89,7 +108,7 @@ const Login = () => {
         </form>
 
         <div className="auth-alt">
-          Don’t have an account? <Link to="/register">Create one</Link>
+          Don't have an account? <Link to="/register">Create one</Link>
         </div>
       </div>
     </div>
@@ -97,3 +116,4 @@ const Login = () => {
 };
 
 export default Login;
+
