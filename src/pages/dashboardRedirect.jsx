@@ -2,7 +2,9 @@ import React from "react";
 import { Navigate } from "react-router-dom";
 import { getStoredRole } from "../utils/auth";
 
-const DashboardRedirect = () => {
+const DashboardRedirect = ({ authReady = true }) => {
+  if (!authReady) return null;
+
   const role = getStoredRole();
 
   // If role is unknown, ask user to login.
@@ -22,4 +24,3 @@ const DashboardRedirect = () => {
 };
 
 export default DashboardRedirect;
-
